@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+		<!--	created with www.mysitemapgenerator.com	-->
+		<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url>
+	<loc>https://securimetre.irsst.qc.ca/</loc>
+	<lastmod>2023-08-10T20:43:01+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://securimetre.irsst.qc.ca/fr/app</loc>
+	<lastmod>2023-08-10T20:43:01+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://securimetre.irsst.qc.ca/fr/comment-utiliser-outil</loc>
+	<lastmod>2023-08-10T20:43:01+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://securimetre.irsst.qc.ca/fr/a-propos</loc>
+	<lastmod>2023-08-10T20:43:01+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://securimetre.irsst.qc.ca/fr/conditions-d-utilisation</loc>
+	<lastmod>2023-08-10T20:43:01+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://securimetre.irsst.qc.ca/fr</loc>
+	<lastmod>2023-08-10T20:43:01+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://securimetre.irsst.qc.ca/en</loc>
+	<lastmod>2023-08-10T20:43:01+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://securimetre.irsst.qc.ca/en/app</loc>
+	<lastmod>2023-08-10T20:43:01+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://securimetre.irsst.qc.ca/en/how-to-use</loc>
+	<lastmod>2023-08-10T20:43:03+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://securimetre.irsst.qc.ca/en/about</loc>
+	<lastmod>2023-08-10T20:43:03+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://securimetre.irsst.qc.ca/en/term-of-use</loc>
+	<lastmod>2023-08-10T20:43:04+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+</urlset>

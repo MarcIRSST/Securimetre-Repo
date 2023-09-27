@@ -1,0 +1,13 @@
+<div class="tag-editor" ng-class="{active:focus}" data-ng-init="focus = false">
+    <div class="tag-draft">
+		<span class="tag label label-info" ng-repeat="tag in tags | localeCompareString">{{tag.title}}
+			<span data-role="remove" class="remove" data-ng-click="remove(tag)">x</span>
+		</span>
+        <input type="hidden" id="{{field}}" name="{{field}}" value="{{tags | getCol:'id'}}"/>
+        <input type="text" class="tag-input" data-ng-focus="focus = true" focus-me="setFocus" data-ng-click="setFocus = true"/>
+    </div>
+
+    <div class="tag-suggestions" ng-show="suggestions && focus">
+        <span class="tag" ng-repeat="tag in suggestions | localeCompareString" data-ng-mousedown="add(tag)">{{tag.title}}</span>
+    </div>
+</div>

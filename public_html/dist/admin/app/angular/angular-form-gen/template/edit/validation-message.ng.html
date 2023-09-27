@@ -1,0 +1,11 @@
+<div ng-form="valMsgForm">
+  <div fg-property-field="message"
+       fg-property-field-label="<% 'MESSAGE_LABEL' | translate %>">
+    <input type="text"
+           name="message"
+           title="<% tooltip %>"
+           placeholder="<% 'OPTIONAL_MESSAGE' | translate %>"
+           ng-model="field.validation.messages[validationType]"
+           class="form-control"/>
+  </div>
+</div>

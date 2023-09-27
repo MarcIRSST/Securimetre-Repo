@@ -1,0 +1,41 @@
+<div ng-if="!field.options || field.options.length === 0" ng-click="optionsCtrl.addOption()" class="alert alert-info">
+  <h2 translate="NO_OPTIONS"></h2>
+  <p class="lead" tranlate="ADD_OPTION"></p>
+</div>
+
+<table ng-if="field.options.length > 0" class="table-field-options">
+  <thead>
+  <tr>
+    <th></th>
+    <th translate="OPTION_VALUE"></th>
+    <th translate="OPTION_TEXT"></th>
+    <th>
+      <a href="" class="btn btn-default btn-xs" ng-click="optionsCtrl.addOption()" title="<% 'ADD_OPTION_TO_LIST' | translate %>"><i
+          class="glyphicon glyphicon-plus"></i></a>
+    </th>
+    <th class="table-field-options-padding"></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr ng-form="fieldOptionForm" ng-repeat="option in field.options" ng-class="{ 'error': fieldOptionForm.$invalid }">
+    <td ng-if="multiple === false">
+      <input type="radio" name="<% field.name %>selection[]" value="<% option.value %>" ng-model="field.value"/>
+    </td>
+    <td ng-if="multiple === true">
+      <input type="checkbox" name="<% field.name %>selection[]" value="<% option.value %>"
+             ng-model="field.value[option.value]"/>
+    </td>
+    <td>
+      <input type="text" name="optionValue" ng-model="option.value" ng-required="true" class="form-control"/>
+    </td>
+    <td>
+      <input type="text" ng-model="option.text" class="form-control"/>
+    </td>
+    <td>
+      <a href="" class="btn btn-default btn-xs" ng-click="optionsCtrl.removeOption($index)"
+         title="<% 'REMOVE_OPTION' | translate %>"><i class="glyphicon glyphicon-trash"></i></a>
+    </td>
+    <td></td>
+  </tr>
+  </tbody>
+</table>

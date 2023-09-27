@@ -1,0 +1,35 @@
+<div class="col-md-9">
+	<div class="col-md-8" style="padding-left: 0 !important;">
+		<select data-ng-model="tagSelector" class="form-control" ng-options="suggestion.label for suggestion in collection | filter:{suggest: true}"></select>
+	</div>
+
+	<div class="col-md-4" style="padding-left: 0 !important;">
+		<a class="btn btn-sm btn-inverse" data-ng-click="add()" data-ng-disabled="!tagSelector">associer</a>
+	</div><br><br>
+
+	<input ng-if="!uselabel" type="hidden" id="{{field}}" name="{{field}}" value="{{tags | getCol:'id'}}" />
+	<input ng-if="uselabel" type="hidden" id="{{field}}" name="{{field}}" value="{{tagsLabels}}" style="width: 100%;" />
+
+
+	<table class="table table-bordered">
+		<tr data-ng-repeat="(key, tag)  in tags">
+
+			<td ng-if="uselabel">
+				<input type="text" id="{{field}}_<% tag.id%>" data-ng-keyup="setTagsLabels();" name="{{field}}_<% tag.id%>" value="<% tagsLabels[key].label%>"
+				    style="width: 100%;" />
+			</td>
+			<td>
+				<% tag.label || 'vide'  %>
+			</td>
+			<td class="col-xs-1">
+				<a class="btn btn-xs" data-ng-click="setOrder('asc', $index);" data-ng-class="{disabled: $first, 'btn-default': $first, 'btn-info': !$first}"><i
+					    class="fa fa-sort-up"></i></a>
+				<a class="btn btn-xs" data-ng-click="setOrder('desc', $index);" data-ng-class="{disabled: $last,  'btn-default': $last, 'btn-info': !$last}"><i
+					    class="fa fa-sort-desc"></i></a>
+			</td>
+			<td class="col-xs-1">
+				<a class="btn btn-xs btn-danger" data-ng-click="remove(tag, $index)"><i class="fa fa-times"></i></a>
+			</td>
+		</tr>
+	</table>
+</div>

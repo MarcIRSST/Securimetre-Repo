@@ -1,0 +1,40 @@
+<div ng-if="fields.fieldname">
+  <div fg-property-field="fieldName" 
+    fg-property-field-label="<% 'FIELD_NAME' | translate %>">
+    
+    <input type="text"
+           class="form-control"
+           name="fieldName"
+           ng-model="field.name"
+           ng-required="true"
+           ng-pattern="/^[a-zA-Z]([\w]+)?$/"
+           fg-unique-field-name/>
+  </div>
+</div>
+
+<!-- displayName -->
+<div ng-if="fields.displayname">
+  <div fg-property-field="displayName" fg-property-field-label="<% 'DISPLAY_NAME' | translate %>">
+    <input type="text" class="form-control" name="displayName" ng-model="field.displayName" />
+  </div>
+</div>
+
+<!-- placeholder -->
+<div ng-if="fields.placeholder">
+  <div fg-property-field="fieldPlaceholder" fg-property-field-label="<% 'PLACEHOLDER_TEXT' | translate %>">
+    <input type="text"
+           class="form-control"
+           name="fieldPlaceholder"
+           ng-model="field.placeholder"/>
+  </div>
+</div>
+
+<!-- tooltip -->
+<div ng-if="fields.tooltip">
+  <div fg-property-field="fieldTooltip" fg-property-field-label="<% 'TOOLTIP' | translate %>">
+    <input type="text"
+           class="form-control"
+           name="fieldTooltip"
+           ng-model="field.tooltip"/>
+  </div>
+</div>

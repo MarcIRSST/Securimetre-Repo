@@ -1,0 +1,68 @@
+<!-- minlength -->
+<div ng-if="fields.minlength" class="fg-property-field-validation">
+  <div fg-property-field="minlength"
+       fg-property-field-label="<% 'MIN_LENGTH' | translate %>">
+    <input type="text"
+           fg-field-redraw
+           fg-input-number
+           title="<% 'MIN_LENGTH_INFO' | translate %>"
+       		 name="minlength"
+       		 ng-model="field.validation.minlength"
+           class="form-control"/>
+  </div>
+
+  <div ng-if="field.validation.minlength >= 1" >
+    <div fg-edit-validation-message="minlength"></div>
+  </div>
+</div>
+
+<!-- maxlength -->
+<div ng-if="fields.maxlength" class="fg-property-field-validation">
+  <div fg-property-field="maxlength"
+       fg-property-field-label="<% 'MAX_LENGTH' | translate %>">
+    <input type="text"
+           fg-field-redraw
+           fg-input-number
+           title="<% 'MAX_LENGTH_INFO' | translate %>"
+           name="maxlength"
+           ng-model="field.validation.maxlength"
+           class="form-control"/>
+  </div>
+
+  <div ng-if="field.validation.maxlength >= 1" >
+    <div fg-edit-validation-message="maxlength"></div>
+  </div>
+</div>
+
+<!-- pattern -->
+<div ng-if="fields.pattern" class="fg-property-field-validation">
+  <div fg-property-field="pattern"
+       fg-property-field-label="<% 'PATTERN_LABEL' | translate %>">
+
+    <div fg-dropdown-input="patternOptions"
+         name="pattern"
+         title="<% 'PATTERN_INFO' | translate %>"
+         fg-parse-pattern
+         fg-field-redraw
+         ng-model="field.validation.pattern"></div>
+  </div>
+
+  <div ng-if="field.validation.pattern.length > 0" >
+    <div fg-edit-validation-message="pattern"></div>
+  </div>
+</div>
+
+<!-- required -->
+<div ng-if="fields.required" class="fg-property-field-validation">
+  <div fg-property-field="required">
+    <div class="checkbox">
+      <label title="<% 'REQUIRED_INFO' | translate %>">
+        <input type="checkbox" ng-model="field.validation.required" /><% 'REQUIRED_LABEL' | translate %>
+      </label>
+    </div>
+  </div>
+  
+  <div ng-if="field.validation.required">
+    <div fg-edit-validation-message="required"></div>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+<div class="fg-edit-canvas" ng-class="{ 'fg-edit-canvas-dragging': dragging }">
+    <div class="form-horizontal">
+        <fieldset>
+            <legend translate="EDITOR_LEGEND"></legend>
+            <div class="fg-edit-canvas-area"
+                 dq-drag-area="fg-edit-canvas"
+                 style="border: 5px dashed #106894 !important;  background: #d9edf7;"
+                 dq-drag-enter="canvasCtrl.dragEnter()"
+                 dq-drag-leave="canvasCtrl.dragLeave()"
+                 dq-drop="canvasCtrl.drop()">
+                <div ng-if="!(schema.fields.length)">
+                    <div ng-if="!dragPlaceholder.visible" class="fg-edit-canvas-area-empty alert alert-info text-center">
+                        <p class="fg-edit-canvas-area-empty-x"><span class="fa fa-mouse-pointer"></span></p>
+                        <p class="lead hidden-phone" translate="EDITOR_DRAG_INSTRUCTION">
+                        </p>
+                    </div>
+                </div>
+                <div ng-repeat="field in schema.fields">
+                    <div ng-class="{ 'fg-drag-placeholder-visible' : dragPlaceholder.visible && dragPlaceholder.index === $index }" class="fg-drag-placeholder"></div>
+                    <div fg-edit-canvas-field></div>
+                </div>
+                <div ng-class="{ 'fg-drag-placeholder-visible': dragPlaceholder.visible && dragPlaceholder.index == schema.fields.length }" class="fg-drag-placeholder">
+                </div>
+            </div>
+        </fieldset>
+    </div>
+</div>

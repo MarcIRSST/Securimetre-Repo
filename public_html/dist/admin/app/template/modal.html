@@ -1,0 +1,88 @@
+<form class="form-horizontal" novalidate="novalidate">
+    <div class="modal-header">
+        <h3 data-ng-show="item.id">
+            <strong>Éditer :</strong>
+            <% item.title %>
+        </h3>
+        <h3 data-ng-hide="item.id">
+            <strong>Ajouter un nouvel élément</strong>
+        </h3>
+    </div>
+    <div class="modal-body">
+
+        <div ng-repeat="locale in locales" id="titre_group" class="form-group ">
+            <label for="title" class="col-md-4 control-label">Titre
+                <% locales.length > 1 ? '(' + locale + ')' : '' %> :</label>
+            <div class="col-md-7">
+                <input id="title" class="form-control" data-ng-model="item[locale].title" />
+            </div>
+        </div>
+
+        <div id="titre_group" class="form-group" ng-hide="hasUrl(item) && (item.page.id === 0)">
+            <label for="title" class="col-md-4 control-label">Page associée :</label>
+            <div class="col-md-7">
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="fa fa-paperclip"></i>
+                    </span>
+                    <ui-select ng-model="item.page" theme="bootstrap" style="width: 300px;">
+                        <ui-select-match>
+                            <% item.page.label %>
+                        </ui-select-match>
+                        <ui-select-choices repeat="page in pages | filter: $select.search">
+                            <span ng-bind-html="page.label | highlight: $select.search"></span>
+                        </ui-select-choices>
+                    </ui-select>
+
+                </div>
+            </div>
+        </div>
+
+        <div ng-repeat="locale in locales" id="url_group" class="form-group" data-ng-show="item.page.id === 0">
+            <label for="url" class="col-md-4 control-label">Url
+                <% locales.length > 1 ? '(' + locale + ')' : '' %> :</label>
+            <div class="col-md-7">
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="fa fa-external-link"></i>
+                    </span>
+                    <input id="url" class="form-control" data-ng-model="item[locale].url" />
+                </div>
+            </div>
+        </div>
+
+        <div id="identifier_group" class="form-group">
+            <label for="url" class="col-md-4 control-label">Identifiant :</label>
+            <div class="col-md-7">
+                <input id="identifier" class="form-control" data-ng-model="item.identifier" />
+            </div>
+        </div>
+
+        <div ng-repeat="locale in locales" id="target_group" class="form-group" data-ng-show="item.page.id === 0">
+            <label class="col-md-4 control-label">Nouvelle fenêtre
+                <% locales.length > 1 ? '(' + locale + ')' : '' %> :</label>
+            <div class="col-md-7">
+                <label class="switch switch-success" style="margin-top:7px;">
+                    <input type="checkbox" class="switch-input" data-ng-model="item[locale].target_blank" checked="">
+                    <span class="switch-label" data-on="oui" data-off="non"></span>
+                    <span class="switch-handle"></span>
+                </label>
+            </div>
+        </div>
+
+        <div id="active_group" class="form-group ">
+            <label for="active" class="col-md-4 control-label">Actifs :</label>
+            <div class="col-md-7">
+                <label class="switch switch-success" style="margin-top:7px;">
+                    <input type="checkbox" class="switch-input" data-ng-model="item.active" checked="">
+                    <span class="switch-label" data-on="oui" data-off="non"></span>
+                    <span class="switch-handle"></span>
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" ng-click="save()">OK</button>
+        <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+    </div>
+</form>

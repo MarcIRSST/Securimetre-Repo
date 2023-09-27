@@ -1,0 +1,11 @@
+<div class="checkbox">
+  <label title="<% field.schema.tooltip %>">
+    <input 
+           id="<% field.$_id %>"
+           type="checkbox"
+           tabindex="<% tabIndex %>"
+           ng-model="form.data[field.schema.name]">
+    	<span ng-if="!edit"><% field.schema.displayName | translate %></span>
+    	<span ng-if="edit"><% field.schema.displayName %></span>
+  </label>
+</div>
